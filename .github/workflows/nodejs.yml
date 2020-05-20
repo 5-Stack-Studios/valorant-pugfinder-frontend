@@ -33,4 +33,4 @@ jobs:
     - name: Run tests
       run: yarn test
     - name: Run linter check
-      run: eslint --ignore-path .gitignore .
+      run: ./node_modules/.bin/eslint --ignore-path .gitignore .
