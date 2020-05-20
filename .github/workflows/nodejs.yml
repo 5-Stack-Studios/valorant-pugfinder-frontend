@@ -33,6 +33,4 @@ jobs:
     - name: Run tests
       run: yarn test
     - name: Run linter check
-      uses: hallee/eslint-action@1.0.2
-      with:
-        repo-token: ${{secrets.GITHUB_TOKEN}}
+      run: eslint --ignore-path .gitignore .
