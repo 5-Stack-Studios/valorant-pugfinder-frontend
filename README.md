@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Development Principles
 
 ### Redux
-To simplify contributions to this frontend tool, the project uses Redux in conjunction with React. Keeping reducers and actions seperate from presentational logic will ideally help developers who aren't as presentation-focuses contribute to parts and those who are more focused on the layout can contribute to others.
+To simplify contributions to this frontend tool, the project uses Redux in conjunction with React. Keeping reducers and actions seperate from presentational logic will ideally help developers who aren't as presentation-focused contribute to parts and those who are more focused on the layout can contribute to others.
 
 ### File Structure
 The file structure at the root level has a directory for each sub-module of the application, as well as a `common` directory for anything that is shared by multiple sub-modules. At a minimum, each of the sub-module directories should have this structure:
