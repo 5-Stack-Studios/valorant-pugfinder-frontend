@@ -15,13 +15,15 @@ The file structure at the root level has a directory for each sub-module of the 
 │   ├── components
 │   ├── constants
 │   ├── containers
-│   └── reducers
+│   ├── reducers
+│   └── tests
 ├── submodule_b
 │   ├── actions
 │   ├── components
 │   ├── constants
 │   ├── containers
-│   └── reducers
+│   ├── reducers
+│   └── tests
 └── ...
 ```
 The name of each sub-directory aptly describes the segment of Redux's ecosystem it contains. 
