@@ -17,13 +17,11 @@ export const createLobbyRequest = makeActionFunction(
 
 /**
  * Creates a success action for after lobby is created
- * @param {String} userId the creator of the lobby
  * @param {Object} lobbyData the returned lobby data
  */
 export const createLobbySuccess = makeActionFunction(
     CREATE_LOBBY.SUCCESS,
-    'userId',
-    'lobbyData'
+    'lobbyData',
 );
 
 // TODO: Brainstorm a better way to get error in here
