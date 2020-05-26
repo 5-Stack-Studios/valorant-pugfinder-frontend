@@ -4,7 +4,7 @@ const lobbyDefaultState = {
     team1: [],
     team2: [],
     captains: [],
-    map: null,
+    map: "bind",
     owner: null,
     id: null,
     queue: {
@@ -12,7 +12,7 @@ const lobbyDefaultState = {
     }
 };
 
-export const lobbies = (state = [], action) => {
+export const lobbies = (state = [{...lobbyDefaultState}], action) => {
     switch (action.type) {
         case LOBBY.CREATE_LOBBY.SUCCESS:
             return [
