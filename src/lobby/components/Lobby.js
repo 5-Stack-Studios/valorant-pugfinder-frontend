@@ -7,9 +7,9 @@ import RoleQueue from "./RoleQueue";
  * A component representing a single lobby in the UI.
  * @param {*} param0
  */
-const Lobby = (x) => (
+const Lobby = (lobby) => (
   <div>
-    <LobbyCard map={x.map} team1={x.team1} team2={x.team2} />
+    <LobbyCard {...lobby} />
     <RoleQueue />
     {/* Add Chat component */}
   </div>

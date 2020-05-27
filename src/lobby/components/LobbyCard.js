@@ -31,7 +31,7 @@ const LobbyCard = ({ map, team1, team2, owner, captains }) => (
     <div className="lobby-card-header" style={imageBgStyle(mapToImage[map])}>
       <h2 className="lobby-map-name lobby-header-text">{map || "unknown"}</h2>
       <p>Owned by {owner || "unknown"}</p>
-      {captains && <p>Captains: {captains.join(", ")}</p>}
+      {captains.length > 0 && <p>Captains: {captains.join(", ")}</p>}
     </div>
     <div className="lobby-card-lineup">
       <Container fluid className="px-0">
