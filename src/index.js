@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import "./index.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import lobbyReducer from "./lobby/reducers/main";
+import { appReducer } from "./common/reducers";
 
 const store = createStore(
-  lobbyReducer,
+  appReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
