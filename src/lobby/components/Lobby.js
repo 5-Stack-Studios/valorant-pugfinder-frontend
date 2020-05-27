@@ -9,7 +9,6 @@ import RoleQueue from "./RoleQueue";
  */
 const Lobby = (x) => (
   <div>
-      {console.log(x)}
     <LobbyCard map={x.map} team1={x.team1} team2={x.team2} />
     <RoleQueue />
     {/* Add Chat component */}
