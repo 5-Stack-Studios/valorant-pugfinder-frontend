@@ -1,8 +1,10 @@
 import React from 'react';
+import LobbyContainer from './lobby/containers/LobbyContainer';
 
 const App = () => (
   <div>
-    Work in progress!
+    <p>Work in progress!</p>
+    <LobbyContainer lobbyId={0} />
   </div>
 );
 
