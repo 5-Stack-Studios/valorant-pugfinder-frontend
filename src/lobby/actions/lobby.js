@@ -41,6 +41,6 @@ export const createLobbyFailure = makeActionFunction(
  * @param {String} userId the creator of the lobby
  * @param {Object} lobbyParams the settings for the lobby
  */
-export const fetchQuestion = (userId, lobbyParams) => dispatch => {
+export const createLobby = (userId, lobbyParams) => dispatch => {
     // TODO: Implement with axios
 };
