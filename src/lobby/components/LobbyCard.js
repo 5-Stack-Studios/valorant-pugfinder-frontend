@@ -4,18 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import PlayerSlot from "./PlayerSlot";
-
-import bindImage from "./assets/bind.png";
-import splitImage from "./assets/split.jpg";
-import havenImage from "./assets/haven.jpeg";
+import { MAP_TO_IMAGE } from "../constants/lobby";
 
 import "./LobbyCard.css";
-
-const mapToImage = {
-  bind: bindImage,
-  split: splitImage,
-  haven: havenImage,
-};
 
 const imageBgStyle = (mapImg) => ({
   backgroundImage: `url(${mapImg})`,
@@ -28,7 +19,7 @@ const imageBgStyle = (mapImg) => ({
 
 const LobbyCard = ({ map, team1, team2, owner, captains }) => (
   <div className="lobby-card">
-    <div className="lobby-card-header" style={imageBgStyle(mapToImage[map])}>
+    <div className="lobby-card-header" style={imageBgStyle(MAP_TO_IMAGE[map])}>
       <h2 className="lobby-map-name lobby-header-text">{map || "unknown"}</h2>
       <p>Owned by {owner || "unknown"}</p>
       {captains.length > 0 && <p>Captains: {captains.join(", ")}</p>}

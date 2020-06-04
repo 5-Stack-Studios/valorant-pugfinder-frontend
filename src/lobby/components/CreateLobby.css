@@ -1,0 +1,24 @@
+.create-lobby-card {
+  display: inline-block;
+  padding: 100px;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  box-shadow: inset 0 0 200px black;
+  color: white;
+}
+
+.create-lobby-card h1 {
+  position: absolute;
+  top: 20px;
+}
+
+.create-lobby-card .lobby-maps button {
+  text-transform: capitalize;
+}
+
+.create-lobby-card button[type="submit"] {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
