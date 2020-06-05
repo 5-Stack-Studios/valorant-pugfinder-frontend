@@ -28,6 +28,12 @@ The file structure at the root level has a directory for each sub-module of the 
 ```
 The name of each sub-directory aptly describes the segment of Redux's ecosystem it contains. 
 
+## Building the Project
+If you want to help develop the Valorant Pugfinder frontend, you should first install NodeJS and [Yarn](https://classic.yarnpkg.com/en/docs/install/#windows-stable). Your system must also have an install of Python running. Then it's just a simple matter of navigating to the root directory and running
+```
+yarn install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
