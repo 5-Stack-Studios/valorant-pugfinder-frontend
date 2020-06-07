@@ -1,4 +1,4 @@
-.create-lobby-card {
+.lobby-settings-panel {
   display: inline-block;
   padding: 100px;
   background-position: center;
@@ -8,16 +8,16 @@
   color: white;
 }
 
-.create-lobby-card h1 {
+.lobby-settings-panel h1 {
   position: absolute;
   top: 20px;
 }
 
-.create-lobby-card .lobby-maps button {
+.lobby-settings-panel .lobby-maps button {
   text-transform: capitalize;
 }
 
-.create-lobby-card button[type="submit"] {
+.lobby-settings-panel button[type="submit"] {
   position: absolute;
   bottom: 10px;
   right: 10px;

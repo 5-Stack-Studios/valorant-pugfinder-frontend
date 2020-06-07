@@ -2,16 +2,12 @@ import React from "react";
 
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import InputGroup from "react-bootstrap/InputGroup";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 import { MAPS, MAP_TO_IMAGE } from "../constants/lobby";
 
-import "./CreateLobby.css";
+import "./LobbySettingsPanel.css";
 
-class CreateLobby extends React.Component {
+class LobbySettingsPanel extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -21,13 +17,14 @@ class CreateLobby extends React.Component {
 
   render = () => (
     <div
-    className="create-lobby-card"
+      className="lobby-settings-panel"
       style={{ backgroundImage: `url(${MAP_TO_IMAGE[this.state.activeMap]}` }}
     >
       <h1>Create a Lobby</h1>
       <ButtonGroup className="lobby-maps">
         {MAPS.map((map) => (
           <Button
+            key={map}
             active={this.state.activeMap === map}
             onClick={(e) =>
               this.setState({ activeMap: e.currentTarget.innerHTML })
@@ -37,9 +34,20 @@ class CreateLobby extends React.Component {
           </Button>
         ))}
       </ButtonGroup>
-      <Button type="submit">Submit</Button>
+      <Button
+        onClick={() =>
+          this.props.createLobbySuccess({
+            map: this.state.activeMap,
+            owner: "1",
+            id: 1,
+          })
+        }
+        type="submit"
+      >
+        Submit
+      </Button>
     </div>
   );
 }
 
-export default CreateLobby;
+export default LobbySettingsPanel;
