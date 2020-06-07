@@ -1,7 +1,7 @@
 import * as LOBBY from "../constants/lobby";
 
 const lobbyDefaultState = {
-    team1: [],
+    team1: [{playerName:"John", selectedRole:"breach"}, {playerName:"Brick", selectedRole:"phoenix"}],
     team2: [],
     captains: [],
     map: "bind",

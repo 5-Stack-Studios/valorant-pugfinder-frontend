@@ -28,6 +28,7 @@ const imageBgStyle = (mapImg) => ({
 
 const LobbyCard = ({ map, team1, team2, owner, captains }) => (
   <div className="lobby-card">
+    {console.log(map)}
     <div className="lobby-card-header" style={imageBgStyle(mapToImage[map])}>
       <h2 className="lobby-map-name lobby-header-text">{map || "unknown"}</h2>
       <p>Owned by {owner || "unknown"}</p>
@@ -39,6 +40,7 @@ const LobbyCard = ({ map, team1, team2, owner, captains }) => (
           <Row noGutters>
             <Col md={6}>
               <div className="player-slot-box">
+                {console.log(p1)}
                 {p1 && <PlayerSlot {...p1} />}
               </div>
             </Col>
