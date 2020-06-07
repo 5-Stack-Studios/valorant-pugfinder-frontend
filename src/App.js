@@ -22,8 +22,8 @@ class App extends React.Component {
     return (
       <div>
         <p>Work in progress!</p>
-        {lobbies.map(({ id }) => (
-          <LobbyContainer lobbyId={id} />
+        {lobbies.map((lobby) => (
+          <LobbyContainer lobby={lobby} />
         ))}
         <CreateLobbyPanel />
       </div>
