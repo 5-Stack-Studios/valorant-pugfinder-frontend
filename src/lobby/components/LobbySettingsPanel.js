@@ -35,13 +35,7 @@ class LobbySettingsPanel extends React.Component {
         ))}
       </ButtonGroup>
       <Button
-        onClick={() =>
-          this.props.createLobbySuccess({
-            map: this.state.activeMap,
-            owner: "1",
-            id: 1,
-          })
-        }
+        onClick={() => this.props.createLobbyRequest("1", this.state.activeMap)}
         type="submit"
       >
         Submit
