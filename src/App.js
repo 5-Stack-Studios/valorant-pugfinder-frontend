@@ -4,24 +4,15 @@ import CreateLobbyPanel from "./lobby/containers/CreateLobbyPanel";
 import LobbyContainer from "./lobby/containers/LobbyContainer";
 import { createLobbySuccess } from "./lobby/actions/lobby";
 
-class App extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(
-      createLobbySuccess({
-        map: "split",
-        owner: "1",
-        id: 0,
-      })
-    );
-    console.log("Dispatched");
-  }
+import "./App.css";
 
+class App extends React.Component {
   render() {
     const { lobbies } = this.props;
     console.log("Rerender", lobbies);
     return (
       <div>
-        <p>Work in progress!</p>
+        <div className="under-construction">🚧 Development Build 🚧</div>
         {lobbies.map((lobby) => (
           <LobbyContainer lobby={lobby} />
         ))}
