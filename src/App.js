@@ -1,33 +1,27 @@
 import React from "react";
-import { connect } from "react-redux";
-import CreateLobbyPanel from "./lobby/containers/CreateLobbyPanel";
-import LobbyContainer from "./lobby/containers/LobbyContainer";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import LobbyPage from "./LobbyPage";
 
-import "./App.css";
+const App = () => (
+  <Router>
+    <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar.Brand href="#home">Valorant Pugfinder</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Link</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+    <Switch>
+      <Route path="/">
+        <LobbyPage />
+      </Route>
+    </Switch>
+  </Router>
+);
 
-class App extends React.Component {
-  render() {
-    const { lobbies } = this.props;
-    console.log("Rerender", lobbies);
-    return (
-      <div>
-        <div className="under-construction">🚧 Development Build 🚧</div>
-        {lobbies.map((lobby) => (
-          <LobbyContainer lobby={lobby} />
-        ))}
-        <CreateLobbyPanel />
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = ({ lobby }) => {
-  console.log({
-    lobbies: lobby.lobbies,
-  });
-  return {
-    lobbies: lobby.lobbies,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
