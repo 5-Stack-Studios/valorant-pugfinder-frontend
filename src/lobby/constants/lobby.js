@@ -12,7 +12,7 @@ export const MAPS = [
   "bind",
   "split",
   "haven",
-  "ascent"
+  "ascent",
 ]
 
 export const MAP_TO_IMAGE = {

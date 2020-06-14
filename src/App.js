@@ -3,13 +3,15 @@ import { connect } from "react-redux";
 import CreateLobbyPanel from "./lobby/containers/CreateLobbyPanel";
 import LobbyContainer from "./lobby/containers/LobbyContainer";
 
+import "./App.css";
+
 class App extends React.Component {
   render() {
     const { lobbies } = this.props;
     console.log("Rerender", lobbies);
     return (
       <div>
-        <p>Work in progress!</p>
+        <div className="under-construction">🚧 Development Build 🚧</div>
         {lobbies.map((lobby) => (
           <LobbyContainer lobby={lobby} />
         ))}
