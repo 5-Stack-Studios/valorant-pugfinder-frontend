@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import LobbySettingsPanel from "../components/LobbySettingsPanel";
-import { createLobbySuccess } from "../actions/lobby";
+import { createLobbyRequest } from "../actions/lobby";
 
 const mapDispatchToProps = {
-  createLobbySuccess,
+  createLobbyRequest,
 };
 
 const CreateLobbyPanel = connect(null, mapDispatchToProps)(LobbySettingsPanel);

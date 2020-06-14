@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import CreateLobbyPanel from "./lobby/containers/CreateLobbyPanel";
 import LobbyContainer from "./lobby/containers/LobbyContainer";
-import { createLobbySuccess } from "./lobby/actions/lobby";
 
 import "./App.css";
 
