@@ -1,22 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
-import CreateLobbyPanel from "./lobby/containers/CreateLobbyPanel";
-import LobbyContainer from "./lobby/containers/LobbyContainer";
+import CreateLobbyPanel from "../containers/CreateLobbyPanel";
+import LobbyContainer from "../containers/LobbyContainer";
 
-import "./App.css";
+import "./LobbyPage.css";
+import Container from "react-bootstrap/Container";
 
 class LobbyPage extends React.Component {
   render() {
     const { lobbies } = this.props;
     console.log("Rerender", lobbies);
     return (
-      <div>
-        <div className="under-construction">🚧 Development Build 🚧</div>
-        {lobbies.map((lobby) => (
-          <LobbyContainer lobby={lobby} />
-        ))}
+      <Container className="lobby-page">
         <CreateLobbyPanel />
-      </div>
+        {lobbies.length > 0 && lobbies
+          .map((lobby) => <LobbyContainer lobby={lobby} />)
+          .reduce((prev, curr) => [prev, <hr />, curr])}
+      </Container>
     );
   }
 }
