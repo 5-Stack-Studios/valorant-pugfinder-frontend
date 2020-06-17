@@ -11,10 +11,10 @@ import "./RoleQueues.css";
 class RoleQueues extends React.Component {
   render() {
     return (
-      <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+      <Tab.Container defaultActiveKey="breach">
         <Row>
-          <Col sm="auto">
-            <Nav variant="pills" className="flex-column">
+          <Col lg={2}>
+            <Nav variant="pills right">
               {AGENTS.map((agent) => (
                 <Nav.Item>
                   <Nav.Link eventKey={agent}>
@@ -27,10 +27,10 @@ class RoleQueues extends React.Component {
               ))}
             </Nav>
           </Col>
-          <Col>
-            <Tab.Content>
+          <Col lg={10}>
+            <Tab.Content className="queue-content">
               {AGENTS.map((agent) => (
-                <Tab.Pane eventKey={agent}>{agent}</Tab.Pane>
+                <Tab.Pane eventKey={agent}><h3>Queue for {agent}</h3></Tab.Pane>
               ))}
             </Tab.Content>
           </Col>

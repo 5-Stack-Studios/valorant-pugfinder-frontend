@@ -13,13 +13,12 @@ import RoleQueues from "./RoleQueues";
  */
 const Lobby = (lobby) => (
   <div>
-    <Container fluid>
+    <Container fluid className="px-0">
       <Row>
-        <Col md="auto">
-          {" "}
+        <Col lg={7}>
           <LobbyCard {...lobby} />
         </Col>
-        <Col>
+        <Col lg={5}>
           <RoleQueues />
         </Col>
       </Row>

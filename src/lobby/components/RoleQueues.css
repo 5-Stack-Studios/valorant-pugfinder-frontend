@@ -2,3 +2,7 @@ img.agent-icon {
   width: 48px;
   height: 48px;
 }
+
+.queue-content {
+  padding-left: 15px;
+}
