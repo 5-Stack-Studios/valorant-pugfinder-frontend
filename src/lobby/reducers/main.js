@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export default combineReducers();
+import { lobbies } from "./lobby";
+
+export default combineReducers({
+  lobbies,
+});
