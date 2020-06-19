@@ -1,0 +1,18 @@
+.character-selected {
+    color: blue;
+    font-family: courier;
+    font-size: 300%;
+    display: flex;
+    height: 100px;
+    width: 100px;
+  }
+
+.player-slot {
+    background-image: linear-gradient( rgb(0, 255, 106), black);
+}
+
+.character-profile {
+    display: flex;
+    height: 300px;
+    width: 100px;
+}

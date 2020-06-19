@@ -40,7 +40,6 @@ const LobbyCard = ({ map, team1, team2, owner, captains }) => (
           <Row noGutters>
             <Col md={6}>
               <div className="player-slot-box">
-                {console.log(p1)}
                 {p1 && <PlayerSlot {...p1} />}
               </div>
             </Col>
