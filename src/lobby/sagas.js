@@ -13,7 +13,7 @@ function* read(socket) {
   }
 }
 
-export function* subscribe(socket) {
+export function subscribe(socket) {
   return new eventChannel((emit) => {
     const receiveLobby = ({ payload }) => emit(createLobbySuccess(payload));
     socket.on("lobby.create.success", receiveLobby);
@@ -26,7 +26,7 @@ export function sendServerLobbyRequest(socket, action) {
   socket.emit("lobby.create", action.payload);
 }
 
-export function* flow() {
+export function* lobbyListenerSaga() {
   //yield take(CREATE_LOBBY.REQUEST);
   const socket = yield call(connect);
   const socketChannel = yield call(subscribe, socket);
