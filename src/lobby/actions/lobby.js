@@ -1,6 +1,4 @@
-import { 
-    CREATE_LOBBY,
-} from "../constants/lobby";
+import { CREATE_LOBBY } from "../constants/lobby";
 
 import { makeActionFunction } from "../../common/actionUtils";
 
@@ -10,9 +8,9 @@ import { makeActionFunction } from "../../common/actionUtils";
  * @param {Object} lobbyParams the settings for the lobby
  */
 export const createLobbyRequest = makeActionFunction(
-    CREATE_LOBBY.REQUEST,
-    'userId',
-    'lobbyParams'
+  CREATE_LOBBY.REQUEST,
+  "owner",
+  "map"
 );
 
 /**
@@ -20,8 +18,8 @@ export const createLobbyRequest = makeActionFunction(
  * @param {Object} lobbyData the returned lobby data
  */
 export const createLobbySuccess = makeActionFunction(
-    CREATE_LOBBY.SUCCESS,
-    'lobbyData',
+  CREATE_LOBBY.SUCCESS,
+  "lobbyData"
 );
 
 // TODO: Brainstorm a better way to get error in here
@@ -31,9 +29,9 @@ export const createLobbySuccess = makeActionFunction(
  * @param {String} userId
  */
 export const createLobbyFailure = makeActionFunction(
-    CREATE_LOBBY.FAILURE,
-    'userId',
-    'error'
+  CREATE_LOBBY.FAILURE,
+  "userId",
+  "error"
 );
 
 /**
@@ -41,6 +39,6 @@ export const createLobbyFailure = makeActionFunction(
  * @param {String} userId the creator of the lobby
  * @param {Object} lobbyParams the settings for the lobby
  */
-export const fetchQuestion = (userId, lobbyParams) => dispatch => {
-    // TODO: Implement with axios
+export const createLobby = (userId, lobbyParams) => (dispatch) => {
+  // TODO: Implement with axios
 };

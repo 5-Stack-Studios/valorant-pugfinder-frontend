@@ -4,19 +4,19 @@ import Lobby from "../components/Lobby";
 import { NUM_TEAM_PLAYERS } from "../constants/match";
 
 const mapStateToProps = (state, ownProps) => {
-  const currentLobby = state.lobby.lobbies[ownProps.lobbyId];
+  const { lobby } = ownProps;
   return {
-    ...currentLobby,
-    owner: state.accounts[currentLobby.owner],
+    ...lobby,
+    owner: state.accounts[lobby.owner],
     team1: [
-      ...currentLobby.team1,
+      ...lobby.team1,
       // Fill the rest of the array with nulls
-      ...new Array(NUM_TEAM_PLAYERS - currentLobby.team1.length).fill(null),
+      ...new Array(NUM_TEAM_PLAYERS - lobby.team1.length).fill(null),
     ],
     team2: [
-      ...currentLobby.team2,
+      ...lobby.team2,
       // Fill the rest of the array with nulls
-      ...new Array(NUM_TEAM_PLAYERS - currentLobby.team2.length).fill(null),
+      ...new Array(NUM_TEAM_PLAYERS - lobby.team2.length).fill(null),
     ],
   };
 };
