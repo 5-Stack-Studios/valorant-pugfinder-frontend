@@ -19,7 +19,7 @@ const Lobby = (lobby) => (
           <LobbyCard {...lobby} />
         </Col>
         <Col lg={5}>
-          <RoleQueues />
+          <RoleQueues queue={lobby.queue} />
         </Col>
       </Row>
     </Container>
