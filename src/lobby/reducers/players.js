@@ -16,6 +16,13 @@ export const queue = (state = { ...PLAYERS.QUEUE_DEFAULT }, action) => {
         }
       });
       return newQueue;
+    case PLAYERS.CHANGE_LINEUP.SUCCESS:
+      // TODO: This part of the reducer should
+      // mark players in the queue who are selected as such.
+      // Check the actions/players.js file to see
+      // what is in the action payload that you can
+      // use to update this
+      return state; // temporary return; please replace
     default:
       return state;
   }
