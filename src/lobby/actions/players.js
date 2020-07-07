@@ -6,14 +6,16 @@ export const changeSelfRoleRequest = makeActionFunction(
   CHANGE_SELF_ROLES.REQUEST,
   "roles",
   "lobbyId",
-  "userId"
+  "playerId"
 );
 
 export const changeSelfRoleSuccess = makeActionFunction(
   CHANGE_SELF_ROLES.SUCCESS,
-  "roles",
   "lobbyId",
-  "userId"
+  // A queue object
+  "queue",
+  // { name: "xxxxx", id: "xxxxx" }
+  "player"
 );
 
 export const changeSelfRoleFailure = makeActionFunction(
