@@ -6,15 +6,25 @@ export const queue = (state = { ...PLAYERS.QUEUE_DEFAULT }, action) => {
       const { roles, player } = action.payload;
 
       const newQueue = { ...state };
-      
+
       return newQueue;
     case PLAYERS.CHANGE_LINEUP.SUCCESS:
-      // TODO: This part of the reducer should
-      // mark players in the queue who are selected as such.
-      // Check the actions/players.js file to see
-      // what is in the action payload that you can
-      // use to update this
-      return state; // temporary return; please replace
+      const playerList = [...action.payload.team1, ...action.payload.team2];
+      const inLineup = (playerList, player) => {
+        const playerListID = playerList.map(({ id }) => id);
+        return playerListID.includes(player.id);
+      };
+      return Object.fromEntries(
+        Object.entries(state).map(([queueRole, players]) => {
+          return [
+            queueRole,
+            players.map((player) => ({
+              ...player,
+              selected: inLineup(playerList, player),
+            })),
+          ];
+        })
+      );
     default:
       return state;
   }
