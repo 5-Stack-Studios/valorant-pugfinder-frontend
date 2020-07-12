@@ -9,12 +9,16 @@ export const signupRequest = makeActionFunction(
   "password"
 );
 
-export const signupSuccess = makeActionFunction(
-  SIGNUP.SUCCESS,
-  "user"
-)
+export const signupSuccess = makeActionFunction(SIGNUP.SUCCESS, "user");
 
-export const signupFailure = makeActionFunction(
-  SIGNUP.FAILURE,
-  "error"
-)
+export const signupFailure = makeActionFunction(SIGNUP.FAILURE, "error");
+
+export const loginRequest = makeActionFunction(
+  LOGIN.REQUEST,
+  "email",
+  "password"
+);
+
+export const loginSuccess = makeActionFunction(LOGIN.SUCCESS, "token");
+
+export const loginFailure = makeActionFunction(LOGIN.FAILURE, "error");

@@ -6,7 +6,15 @@ import axios from "axios";
 function apiRequestSignup(authParams) {
   return axios.request({
     method: "post",
-    url: "/api/users",
+    url: "/api/user",
+    data: authParams,
+  });
+}
+
+function apiRequestLogin(authParams) {
+  return axios.request({
+    method: "post",
+    url: "/api/login",
     data: authParams,
   });
 }
@@ -18,7 +26,7 @@ function* signupSaga(action) {
     Object.keys(data.session).forEach((key) => {
       localStorage.setItem(key, data[key]);
     });
-    
+
     yield put(actions.signupSuccess);
     // browserHistory.push('/'); TODO: decide redirect
   } catch (err) {
@@ -29,4 +37,21 @@ function* signupSaga(action) {
 
 export function* signupListenerSaga() {
   yield takeLatest(constants.SIGNUP.REQUEST, signupSaga);
+}
+
+function* loginSaga(action) {
+  try {
+    let { data } = yield call(apiRequestLogin, action.payload);
+    
+    console.log("Token: ", data.token);
+
+    yield put(actions.loginSuccess(data.token));
+  } catch (err) {
+    console.error("Login error", err);
+    yield put(actions.loginFailure(err));
+  }
+}
+
+export function* loginListenerSaga() {
+  yield takeLatest(constants.LOGIN.REQUEST, loginSaga);
 }
