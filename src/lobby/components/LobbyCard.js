@@ -30,12 +30,12 @@ const LobbyCard = ({ map, team1, team2, owner, captains }) => (
           <Row noGutters>
             <Col md={6}>
               <div className="player-slot-box">
-                {p1 && <PlayerSlot {...p1} />}
+                {p1 && <PlayerSlot {...p1} team="team1" />}
               </div>
             </Col>
             <Col md={6}>
               <div className="player-slot-box">
-                {team2[i] && <PlayerSlot {...team2[i]} />}
+                {team2[i] && <PlayerSlot {...team2[i]} team="team2" />}
               </div>
             </Col>
           </Row>
