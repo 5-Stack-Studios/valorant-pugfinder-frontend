@@ -9,7 +9,7 @@ export const signupRequest = makeActionFunction(
   "password"
 );
 
-export const signupSuccess = makeActionFunction(SIGNUP.SUCCESS, "user");
+export const signupSuccess = makeActionFunction(SIGNUP.SUCCESS, "token");
 
 export const signupFailure = makeActionFunction(SIGNUP.FAILURE, "error");
 

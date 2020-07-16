@@ -22,21 +22,20 @@ function apiRequestLogin(authParams) {
 function* signupSaga(action) {
   try {
     let { data } = yield call(apiRequestSignup, action.payload);
-
-    Object.keys(data.session).forEach((key) => {
-      localStorage.setItem(key, data[key]);
-    });
-
-    yield put(actions.signupSuccess);
+    console.log(data);
+    yield put(actions.signupSuccess(data.token));
     // browserHistory.push('/'); TODO: decide redirect
   } catch (err) {
     // TODO: Properly format the error
+    console.error("Signup error");
+    console.error(err)
     yield put(actions.signupFailure(err));
   }
 }
 
 export function* signupListenerSaga() {
   yield takeLatest(constants.SIGNUP.REQUEST, signupSaga);
+
 }
 
 function* loginSaga(action) {

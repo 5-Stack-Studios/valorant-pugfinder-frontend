@@ -15,8 +15,19 @@ const activeUser = (state = null, action) => {
   }
 };
 
+const token = (state = null, action) => {
+  switch (action.type) {
+    case LOGIN.SUCCESS:
+    case SIGNUP.SUCCESS:
+      return action.payload.token;
+    default:
+      return state;
+  }
+};
+
 const accounts = combineReducers({
   activeUser,
+  token
 });
 
 export default accounts;

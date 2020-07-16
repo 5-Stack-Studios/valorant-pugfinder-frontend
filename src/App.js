@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import LobbyPage from "./lobby/components/LobbyPage";
 import LoginPage from "./accounts/containers/LoginPage";
+import SignupPage from "./accounts/containers/SignupPage";
 
 import "./App.css";
 
@@ -20,11 +21,17 @@ const App = ({ activeUser }) => (
           <Nav.Link href="#link">Link</Nav.Link>
         </Nav>
         <Nav className="ml-auto justify-content-end">
-          <Nav.Link>{activeUser && "Logged in as: " + activeUser.name}</Nav.Link>
+          <Nav.Link>
+            {activeUser && "Logged in as: " + activeUser.name}
+          </Nav.Link>
+          {!activeUser && <Nav.Link href="/signup">Signup</Nav.Link>}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
     <Switch>
+      <Route path="/signup">
+        <SignupPage />
+      </Route>
       <Route path="/login">
         <LoginPage />
       </Route>
