@@ -8,7 +8,6 @@ const activeUser = (state = null, action) => {
     case SIGNUP.SUCCESS:
       // TODO: Improve validation
       const { user } = jwtDecode(action.payload.token)
-      console.log(user);
       return user;
     default:
       return state;
