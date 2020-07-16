@@ -9,8 +9,7 @@ import Container from "react-bootstrap/Container";
 class LobbyPage extends React.Component {
   render() {
     const { lobbies } = this.props;
-    console.log("Rerender", lobbies);
-    return (
+     return (
       <Container className="lobby-page">
         <CreateLobbyPanel />
         {lobbies.length > 0 && lobbies
@@ -22,9 +21,6 @@ class LobbyPage extends React.Component {
 }
 
 const mapStateToProps = ({ lobby }) => {
-  console.log({
-    lobbies: lobby.lobbies,
-  });
   return {
     lobbies: lobby.lobbies,
   };

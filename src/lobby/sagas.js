@@ -1,4 +1,4 @@
-import { take, put, call, fork, cancel, takeEvery } from "redux-saga/effects";
+import { take, put, call, select, takeEvery } from "redux-saga/effects";
 import { eventChannel } from "redux-saga";
 import { createLobbySuccess } from "./actions/lobby";
 import { CREATE_LOBBY } from "./constants/lobby";
@@ -13,7 +13,7 @@ function* read(socket) {
   }
 }
 
-export function* subscribe(socket) {
+export function subscribe(socket) {
   return new eventChannel((emit) => {
     const receiveLobby = ({ payload }) => emit(createLobbySuccess(payload));
     socket.on("lobby.create.success", receiveLobby);
@@ -21,13 +21,12 @@ export function* subscribe(socket) {
   });
 }
 
-export function sendServerLobbyRequest(socket, action) {
-  console.log("Send server lobby req", action);
-  socket.emit("lobby.create", action.payload);
+export function* sendServerLobbyRequest(socket, action) {
+  const owner = yield select((state) => state.accounts.activeUser.id);
+  socket.emit("lobby.create", { ...action.payload, owner });
 }
 
-export function* flow() {
-  //yield take(CREATE_LOBBY.REQUEST);
+export function* lobbyListenerSaga() {
   const socket = yield call(connect);
   const socketChannel = yield call(subscribe, socket);
   yield takeEvery(CREATE_LOBBY.REQUEST, sendServerLobbyRequest, socket);

@@ -9,7 +9,6 @@ import { makeActionFunction } from "../../common/actionUtils";
  */
 export const createLobbyRequest = makeActionFunction(
   CREATE_LOBBY.REQUEST,
-  "owner",
   "map"
 );
 
