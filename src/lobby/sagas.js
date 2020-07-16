@@ -22,7 +22,7 @@ export function subscribe(socket) {
 }
 
 export function* sendServerLobbyRequest(socket, action) {
-  const owner = yield select((state) => state.accounts.activeUser.id);
+  const owner = yield select((state) => state.accounts.activeUser && state.accounts.activeUser.id);
   socket.emit("lobby.create", { ...action.payload, owner });
 }
 
