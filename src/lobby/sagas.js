@@ -17,6 +17,8 @@ export function subscribe(socket) {
   return new eventChannel((emit) => {
     const receiveLobby = ({ payload }) => emit(createLobbySuccess(payload));
     socket.on("lobby.create.success", receiveLobby);
+    // Get the initial lobbies
+    socket.emit("lobby.fetch");
     return () => {};
   });
 }
