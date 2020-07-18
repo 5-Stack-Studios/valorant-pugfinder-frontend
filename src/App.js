@@ -13,17 +13,17 @@ const App = ({ activeUser }) => (
   <Router>
     <div className="under-construction">🚧 Development Build 🚧</div>
     <Navbar bg="dark" variant="dark" expand="lg">
-      <Navbar.Brand href="#home">Valorant Pugfinder</Navbar.Brand>
+      <Navbar.Brand href="/">Valorant Pugfinder</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
+          <Nav.Link href="/">Home</Nav.Link>
         </Nav>
         <Nav className="ml-auto justify-content-end">
           <Nav.Link>
             {activeUser && "Logged in as: " + activeUser.name}
           </Nav.Link>
+          {!activeUser && <Nav.Link href="/login">Login</Nav.Link>}
           {!activeUser && <Nav.Link href="/signup">Signup</Nav.Link>}
         </Nav>
       </Navbar.Collapse>
