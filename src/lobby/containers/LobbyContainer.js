@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
   const { lobby } = ownProps;
   return {
     ...lobby,
-    owner: state.accounts[lobby.owner],
     team1: [
       ...lobby.team1,
       // Fill the rest of the array with nulls
