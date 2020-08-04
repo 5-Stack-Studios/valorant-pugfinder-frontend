@@ -22,6 +22,7 @@ class RoleQueues extends React.Component {
                 <Nav.Item>
                   <Nav.Link eventKey={agent}>
                     <img
+                      alt = 'agent icon'
                       className="agent-icon"
                       src={AGENTS_TO_PORTRAITS[agent]}
                     />

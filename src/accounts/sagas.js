@@ -3,6 +3,8 @@ import * as actions from "./actions";
 import * as constants from "./constants";
 import axios from "axios";
 
+//const mysql = require('mysql');
+
 function apiRequestSignup(authParams) {
   return axios.request({
     method: "post",
@@ -21,8 +23,10 @@ function apiRequestLogin(authParams) {
 
 function* signupSaga(action) {
   try {
+    //console.log(action.payload);
     let { data } = yield call(apiRequestSignup, action.payload);
     console.log(data);
+    console.log('here')
     yield put(actions.signupSuccess(data.token));
     // browserHistory.push('/'); TODO: decide redirect
   } catch (err) {

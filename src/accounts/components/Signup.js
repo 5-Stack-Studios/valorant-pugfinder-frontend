@@ -48,7 +48,7 @@ class Signup extends React.Component {
             />
           </Form.Group>
           <Form.Group>
-            <Form.Label controlId="password">Password</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control
               name="password"
               onChange={this.changeHandler}
